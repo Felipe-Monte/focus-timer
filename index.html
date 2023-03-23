@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles/style.css">
+  <title>Focus timer - Pomodoro</title>
+</head>
+
+<body>
+  <div class="container-wrapper">
+    <main>
+      <div class="timer">
+        <span id="minutes">25</span>
+        <span>:</span>
+        <span id="seconds">00</span>
+      </div>
+      <div class="controls">
+        <button id="play">
+          <img src="images/play.svg" alt="botão de play">
+        </button>
+        <button id="pause" class="hide">
+          <img src="images/pause.svg" alt="botão de pause">
+        </button>
+        <button id="start">
+          <img src="images/start.svg" alt="botão de start">
+        </button>
+        <button id="stop" class="hide">
+          <img src="images/stop.svg" alt="botão de stop">
+        </button>
+      </div>
+    </main>
+  </div>
+
+  <footer>
+    <button id="sound-on">
+      <img src="images/sound-on.svg" alt="">
+    </button>
+    <button id="sound-off" class="hide">
+      <img src="images/sound-off.svg" alt="">
+    </button>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+
+</html>
