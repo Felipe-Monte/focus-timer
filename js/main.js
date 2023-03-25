@@ -6,6 +6,7 @@ const buttonStop = document.querySelector('#stop')
 let minutesDisplay = document.querySelector('#minutes')
 let secondsDisplay = document.querySelector('#seconds')
 let userMinutes = "00"
+let clearTimer
 
 function resetTimerDisplay() {
   buttonPause.classList.add('hide')
@@ -14,13 +15,18 @@ function resetTimerDisplay() {
   buttonSet.classList.remove('hide')
 }
 
+function resetCount() {
+  updateTimerDisplay(userMinutes, 0)
+  clearInterval(clearTimer)
+}
+
 function updateTimerDisplay(minutes, seconds) {
   minutesDisplay.textContent = String(minutes).padStart(2, "0")
   secondsDisplay.textContent = String(seconds).padStart(2, "0")
 }
 
 function countdown() {
-  setTimeout(function () {
+  clearTimer = setTimeout(function () {
     let seconds = Number(secondsDisplay.textContent)
     let minutes = Number(minutesDisplay.textContent)
 
@@ -55,14 +61,16 @@ buttonPlay.addEventListener('click', function () {
 buttonPause.addEventListener('click', function () {
   buttonPlay.classList.remove('hide')
   buttonPause.classList.add('hide')
+  clearInterval(clearTimer)
 })
 
 buttonStop.addEventListener('click', function () {
   resetTimerDisplay()
+    resetCount()
 })
 
 buttonSet.addEventListener('click', function () {
-  userMinutes = prompt("Quantos minutos ?")
+  userMinutes = prompt("Quantos minutos ?") || 0
   // minutesDisplay.textContent = String(minutes).padStart(2, "0")
   updateTimerDisplay(String(userMinutes), 0)
 })
