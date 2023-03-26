@@ -5,7 +5,7 @@ const buttonStop = document.querySelector('#stop')
 
 let minutesDisplay = document.querySelector('#minutes')
 let secondsDisplay = document.querySelector('#seconds')
-let userMinutes = "00"
+let userMinutes = 00
 let clearTimer
 
 function resetTimerDisplay() {
@@ -70,7 +70,11 @@ buttonStop.addEventListener('click', function () {
 })
 
 buttonSet.addEventListener('click', function () {
-  userMinutes = prompt("Quantos minutos ?") || 0
+  userMinutes = Number(prompt("Quantos minutos ?"))  || 0
+  if (userMinutes < 0) {
+    alert("Não aceito números negativos !")
+    return
+  }
   // minutesDisplay.textContent = String(minutes).padStart(2, "0")
   updateTimerDisplay(String(userMinutes), 0)
 })
