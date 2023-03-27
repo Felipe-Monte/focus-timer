@@ -62,15 +62,15 @@ buttonPause.addEventListener('click', function () {
 
 buttonStop.addEventListener('click', function () {
   resetTimerDisplay()
-    resetCount()
+  resetCount()
 })
 
 buttonSet.addEventListener('click', function () {
-  userMinutes = Number(prompt("Quantos minutos ?"))  || 0
+  userMinutes = Number(prompt("Quantos minutos ?")) || 0
   if (userMinutes < 0) {
     alert("Não aceito números negativos !")
     return
   }
- 
+
   updateTimerDisplay(String(userMinutes), 0)
 })
