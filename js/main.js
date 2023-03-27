@@ -38,17 +38,13 @@ function countdown() {
 
     if (seconds <= 0) {
       seconds = 60
-
-      // minutesDisplay.textContent = String(--minutes).padStart(2, "0")
       updateTimerDisplay(--minutes, seconds)
     }
 
-    // secondsDisplay.textContent = String(--seconds).padStart(2, "0")
     updateTimerDisplay(minutes, String(--seconds))
     countdown()
   }, 10)
 }
-
 
 buttonPlay.addEventListener('click', function () {
   buttonPlay.classList.add('hide')
@@ -75,6 +71,6 @@ buttonSet.addEventListener('click', function () {
     alert("Não aceito números negativos !")
     return
   }
-  // minutesDisplay.textContent = String(minutes).padStart(2, "0")
+ 
   updateTimerDisplay(String(userMinutes), 0)
 })
