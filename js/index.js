@@ -6,7 +6,7 @@ const buttonPause = document.querySelector('#pause')
 const buttonSet = document.querySelector('#start')
 const buttonStop = document.querySelector('#stop')
 const buttonSoundOn = document.querySelector('#sound-on')
-const buttonSoundOff = document.querySelector('sound-off')
+const buttonSoundOff = document.querySelector('#sound-off')
 
 let minutesDisplay = document.querySelector('#minutes')
 let secondsDisplay = document.querySelector('#seconds')
@@ -15,7 +15,7 @@ const controls = Controls({
   buttonPlay,
   buttonPause,
   buttonStop,
-  buttonSet
+  buttonSet,
 })
 
 const timer = Timer({
@@ -37,6 +37,16 @@ buttonPause.addEventListener('click', function () {
 buttonStop.addEventListener('click', function () {
   controls.reset()
   timer.reset()
+})
+
+buttonSoundOn.addEventListener('click', function () {
+  buttonSoundOn.classList.add('hide')
+  buttonSoundOff.classList.remove('hide')
+})
+
+buttonSoundOff.addEventListener('click', function () {
+  buttonSoundOff.classList.add('hide')
+  buttonSoundOn.classList.remove('hide')
 })
 
 buttonSet.addEventListener('click', function () {

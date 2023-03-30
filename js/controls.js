@@ -2,7 +2,7 @@ export default function Controls({
   buttonPlay,
   buttonPause,
   buttonStop,
-  buttonSet
+  buttonSet,
 }) {
 
   function play() {
